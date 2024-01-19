@@ -1,0 +1,125 @@
+@import url("https://use.typekit.net/dcv1nmv.css");
+
+* {
+    font-family: "forma-djr-micro", sans-serif;
+    margin: 0;
+    padding: 0;
+    --header: 3rem;
+    --footer: 60px;
+    --main: calc(100vh - calc(var(--header) + var(--footer)));
+}
+
+:root.light {
+    --bg-color: #FFFFFF;
+    --text-color:#453750;
+    --primary-color: #4A7C59;
+    --secondary-color: #3a5843;
+    --third-color:#8FC0A9;
+}
+
+:root.dark {
+    --bg-color: #0C0910;
+    --text-color: #FFFFFF;
+    --primary-color: #9882AC;
+    --secondary-color: #A393BF;
+    --third-color:#554e62;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1em;
+    width:100%;
+}
+
+header > span, header > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    margin: 18px;
+}
+
+header > span:hover {
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+main {
+    height: var(--main);
+    display: flex;
+    align-items: center;
+}
+
+form {
+    padding: 2rem;
+    border: solid 1px var(--primary-color);
+    border-radius: 8px;
+    background: blur;
+}
+
+fieldset {
+    padding: 2rem;
+    border: none;
+    border-radius: 8px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1em;
+    width:100%;
+}
+
+footer > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+    margin: 18px;
+}
+
+.credits a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:4px; 
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+.credits a:hover {
+    color: var(--secondary-color);
+}
+
+.credits i {
+    color: var(--primary-color);
+    transition: 0.33s;
+    font-size: 16px;
+}
+
+.credits i:hover {
+    transform: rotateY(3.142rad);
+}
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        background-color: #1e1e1e;
+        color: whitesmoke;
+    }
+  } */
