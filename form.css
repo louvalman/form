@@ -4,29 +4,34 @@
     font-family: "forma-djr-micro", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     --header: 4rem;
     --footer: 60px;
     --main: calc(100vh - calc(var(--header) + var(--footer)));
     --box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     --box-shadow-small: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    --white-color: #FCFBF4;
+    --black-color: #43454e;
 }
 
 :root.light {
-    --bg-color: #FFFFFF;
-    --text-color: #1e1e1e;
-    --primary-color: #AE3DAC;
+    --bg-color: #FCFBF4;
+    --text-color: #43454e;
+    --primary-color: #DD37A8;
     --secondary-color: #CA3BAD;
     --third-color: #743DA3;
-    --svg-bg: url('bg-purple.svg');
+    --border-bottom-style: 0.5px solid rgba(33, 36, 39, 0.25);
+    --svg-bg: url('/assets/bg-purple.svg');
 }
 
 :root.dark {
-    --bg-color: #29252f;
-    --text-color: #FFFFFF;
+    --bg-color: #0b1517;
+    --text-color: #FCFBF4;
     --primary-color: #074446;
     --secondary-color: #003A46;
     --third-color: #00243D;
-    --svg-bg: url('bg-green.svg');
+    --border-bottom-style: 0.5px solid rgba(252, 251, 244, 0.5);
+    --svg-bg: url('/assets/bg-green.svg');
 }
 
 body {
@@ -69,6 +74,10 @@ header>div:last-child {
     width: 58px;
 }
 
+h1 {
+    color: var(--text-color);
+}
+
 .header-right {
     display: flex;
     flex-direction: row;
@@ -87,7 +96,7 @@ header>div:last-child {
 
 .github-link {
     text-decoration: none;
-    color: #1e1e1e;
+    color: var(--primary-color);
 }
 
 .github-link:hover {
@@ -99,6 +108,12 @@ header>div:last-child {
     font-size: 0.85em;
     max-width: 250px !important;
     box-shadow: var(--box-shadow-small) !important;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+.tippy-roundarrow {
+    fill: var(--bg-color);
 }
 
 main {
@@ -108,20 +123,135 @@ main {
 }
 
 form {
-    padding: 6rem;
+    padding: 3rem;
     border-radius: 8px;
     backdrop-filter: blur(20px);
     box-shadow: var(--box-shadow);
 }
 
 fieldset {
-    padding: 2rem;
     border: none;
     border-radius: 8px;
+    text-align: left;
 }
 
-fieldset * {
-    opacity: 0;
+legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: var(--text-color);
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+ul li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    position: relative;
+    margin-top: 0.3em;
+    margin-inline: auto;
+    max-width: 40rem;
+  }
+
+ul > div {
+    display: flex;
+    gap: 2rem;
+}
+
+div > label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    color: var(--text-color);
+    pointer-events: none;
+    transform-origin: left center;
+    transition: transform 0.25s;
+    opacity: 0.9;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+div > input {
+    font-size: 1em;
+    min-width: 240px;
+    width: 100%;
+    padding: 8px 0;
+    padding-right: 10px;
+    color: var(--text-color);
+    border: none;
+    border-bottom: var(--border-bottom-style);
+    transition: border-color 250ms;
+    background-color: transparent;
+} 
+
+.input:focus {
+    outline: none;
+    border-bottom-color:var(--text-color);
+  }
+  
+  .input::placeholder {
+    color: transparent;
+  }
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  transform: translateY(-100%) scale(0.75);
+}
+
+.clear {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    color: var(--text-color);
+    opacity: 0.5;
+    transition: color 250ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear:hover,
+.clear:focus {
+  color: var(--primary-color);
+}
+
+div > .input:placeholder-shown + .label + .clear {
+    display: none;
+  }
+
+button[type="submit"] {
+    margin-top: 2rem;
+    float: right;
+    border: solid 1px var(--text-color);
+    border-radius: 4px;
+    padding: 0.75em 1.5em;
+    background-color: transparent;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: transform 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+button[type="submit"]:hover{
+    cursor: pointer;
+    box-shadow: var(--box-shadow-small);
+    transform: scale(1.025);
 }
 
 footer {

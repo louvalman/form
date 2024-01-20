@@ -1,78 +1,211 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="https://use.typekit.net/dcv1nmv.css" />
+    <link rel="stylesheet" href="/form.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="/form.js" defer></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form</title>
-  <link rel="stylesheet" href="https://use.typekit.net/dcv1nmv.css" />
-  <link rel="stylesheet" href="/form.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/light.css" />
-  <script src="/form.js" defer></script>
-  <script src="https://unpkg.com/popper.js@1"></script>
-  <script src="https://unpkg.com/tippy.js@4"></script>
-</head>
-
-<body>
-  <div class="svg-overlay"></div>
-  <header>
-    <div></div>
-    <div>
-      <h1>A form template</h1>
-    </div>
-    <div class="header-right">
-      <i class="iconoir-info-circle" id="info" data-tippy-theme="light"></i>
-      <span class="theme-toggle">
-        <i class="iconoir-light-bulb-off"></i>
-      </span>
-    </div>
-  </header>
-  <main>
-    <form action="#" method="post">
-      <fieldset>
-        <legend>Howdy</legend>
-        <ul>
-          <li>
-            <label for="first_name">First name</label>
-            <input type="text" name="first_name" id="first_name" />
-          </li>
-          <li>
-            <label for="last_name">Last name</label>
-            <input type="text" name="last_name" id="last_name" />
-          </li>
-          <li>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
-          </li>
-          <li>
-            <label for="phone_number">Phone number</label>
-            <input type="tel" name="phone_number" id="phone_number" />
-          </li>
-          <li>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" />
-          </li>
-          <li>
-            <label for="password_confirmation">Confirm password</label>
-            <input type="password" name="password" id="password_confirmation" />
-          </li>
-        </ul>
-        <button type="submit">Create account</button>
-      </fieldset>
-    </form>
-  </main>
-  <footer>
-    <div></div>
-    <h2></h2>
-    <div class="credits">
-      <a href="https://github.com/louvalman">
-        by louvalman
-        <i class="fa fa-github"></i>
-      </a>
-    </div>
-  </footer>
-</body>
-
+  <body>
+    <div class="svg-overlay"></div>
+    <header>
+      <div></div>
+      <div>
+        <h1>form template</h1>
+      </div>
+      <div class="header-right">
+        <i class="iconoir-info-circle" id="info" data-tippy-theme="light"></i>
+        <span class="theme-toggle">
+          <i class="iconoir-light-bulb-off"></i>
+        </span>
+      </div>
+    </header>
+    <main>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Create account</legend>
+          <ul>
+            <div>
+              <li>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    name="first_name"
+                    id="first_name"
+                    class="input"
+                    placeholder="First name" />
+                  <label for="first_name" class="label">First name</label>
+                  <button
+                    class="clear"
+                    type="button"
+                    data-input-id="first_name"
+                    aria-label="Clear input">
+                    <svg
+                      data-input-id="first_name"
+                      viewBox="0 0 16 16"
+                      width="12"
+                      height="12">
+                      <path
+                        d="M 1 1 L 15 15 M 1 15 L 15 1"
+                        fill="none"
+                        stroke-width="2"
+                        stroke="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    name="last_name"
+                    id="last_name"
+                    class="input"
+                    placeholder="Last name" />
+                  <label for="last_name" class="label">Last name</label>
+                  <button
+                    class="clear"
+                    type="button"
+                    data-input-id="last_name"
+                    aria-label="Clear input">
+                    <svg viewBox="0 0 16 16" width="12" height="12">
+                      <path
+                        d="M 1 1 L 15 15 M 1 15 L 15 1"
+                        fill="none"
+                        stroke-width="2"
+                        stroke="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            </div>
+            <div>
+              <li>
+                <div class="input-container">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="input"
+                    placeholder="Email" />
+                  <label for="email" class="label">Email</label>
+                  <button
+                    class="clear"
+                    type="button"
+                    data-input-id="email"
+                    aria-label="Clear input">
+                    <svg viewBox="0 0 16 16" width="12" height="12">
+                      <path
+                        d="M 1 1 L 15 15 M 1 15 L 15 1"
+                        fill="none"
+                        stroke-width="2"
+                        stroke="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="input-container">
+                  <input
+                    type="tel"
+                    name="phone_number"
+                    id="phone_number"
+                    class="input"
+                    placeholder="Phone number" />
+                  <label for="phone_number" class="label">Phone number</label>
+                  <button
+                    class="clear"
+                    type="button"
+                    data-input-id="phone_number"
+                    aria-label="Clear input">
+                    <svg viewBox="0 0 16 16" width="12" height="12">
+                      <path
+                        d="M 1 1 L 15 15 M 1 15 L 15 1"
+                        fill="none"
+                        stroke-width="2"
+                        stroke="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            </div>
+            <div>
+              <li>
+                <div class="input-container">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="input"
+                    placeholder="Password" />
+                  <label for="password" class="label">Password</label>
+                  <button
+                    class="clear"
+                    type="button"
+                    data-input-id="password"
+                    aria-label="Clear input">
+                    <svg viewBox="0 0 16 16" width="12" height="12">
+                      <path
+                        d="M 1 1 L 15 15 M 1 15 L 15 1"
+                        fill="none"
+                        stroke-width="2"
+                        stroke="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="input-container">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password_confirmation"
+                    class="input"
+                    placeholder="Confirm password" />
+                  <label for="password_confirmation" class="label">
+                    Confirm password
+                  </label>
+                  <button
+                    class="clear"
+                    type="button"
+                    data-input-id="password_confirmation"
+                    aria-label="Clear input">
+                    <svg viewBox="0 0 16 16" width="12" height="12">
+                      <path
+                        d="M 1 1 L 15 15 M 1 15 L 15 1"
+                        fill="none"
+                        stroke-width="2"
+                        stroke="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            </div>
+          </ul>
+          <button type="submit">Sign up</button>
+        </fieldset>
+      </form>
+    </main>
+    <footer>
+      <div></div>
+      <h2></h2>
+      <div class="credits">
+        <a href="https://github.com/louvalman">
+          by louvalman
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>
