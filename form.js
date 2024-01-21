@@ -22,7 +22,7 @@ tippy('#info', {
   animateFill: false,
   animation: 'shift-away',
   interactive: true,
-  placement: 'left',
+  placement: 'left-end',
 });
 
 // Clear input
@@ -32,4 +32,34 @@ document.addEventListener('click', function (event) {
     let inputId = clearButton.getAttribute('data-input-id');
     document.getElementById(inputId).value = '';
   }
+  validatePasswords();
 });
+
+// Password validation
+const password = document.querySelector('#password');
+const passwordConfirmation = document.querySelector('#password_confirmation');
+const helperTexts = document.querySelectorAll('.helper-text');
+
+function validatePasswords() {
+  const passwordValue = password.value.trim();
+  const passwordConfirmationValue = passwordConfirmation.value.trim();
+
+  if (
+    passwordValue !== '' &&
+    passwordConfirmationValue !== '' &&
+    passwordConfirmationValue !== passwordValue
+  ) {
+    helperTexts.forEach((helperText) => {
+      helperText.innerHTML =
+        '<i class="iconoir-warning-hexagon"></i> The passwords do not match';
+    });
+  } else {
+    helperTexts.forEach((helperText) => {
+      helperText.innerHTML = ''; // Clear the helper text when passwords match or either field is empty
+    });
+  }
+}
+
+// Validate passwords on input in either field
+password.addEventListener('input', validatePasswords);
+passwordConfirmation.addEventListener('input', validatePasswords);

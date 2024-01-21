@@ -20,17 +20,17 @@
     --primary-color: #DD37A8;
     --secondary-color: #CA3BAD;
     --third-color: #743DA3;
-    --border-bottom-style: 0.5px solid rgba(33, 36, 39, 0.25);
+    --border-bottom-style: 1px solid rgba(67, 69, 78, 0.4);
     --svg-bg: url('/assets/bg-purple.svg');
 }
 
 :root.dark {
     --bg-color: #0b1517;
     --text-color: #FCFBF4;
-    --primary-color: #074446;
+    --primary-color: #084445;
     --secondary-color: #003A46;
     --third-color: #00243D;
-    --border-bottom-style: 0.5px solid rgba(252, 251, 244, 0.5);
+    --border-bottom-style: 1px solid rgba(252, 251, 244, 0.5);
     --svg-bg: url('/assets/bg-green.svg');
 }
 
@@ -87,6 +87,7 @@ h1 {
 
 .header-right * {
     display: flex;
+    transition: color 0.1s;
 }
 
 .header-right *:hover {
@@ -137,8 +138,8 @@ fieldset {
 
 legend {
     font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1em;
+    font-weight: 400;
+    margin-bottom: 2rem;
     color: var(--text-color);
 }
 
@@ -159,6 +160,7 @@ ul li {
     margin-top: 0.3em;
     margin-inline: auto;
     max-width: 40rem;
+    height: 40px;
   }
 
 ul > div {
@@ -174,7 +176,7 @@ div > label {
     pointer-events: none;
     transform-origin: left center;
     transition: transform 0.25s;
-    opacity: 0.9;
+    opacity: 0.99;
     font-size: 0.9em;
     font-weight: 400;
 }
@@ -192,7 +194,7 @@ div > input {
     background-color: transparent;
 } 
 
-.input:focus {
+.input {
     outline: none;
     border-bottom-color:var(--text-color);
   }
@@ -203,7 +205,8 @@ div > input {
 
 .input:focus + .label,
 .input:not(:placeholder-shown) + .label {
-  transform: translateY(-100%) scale(0.75);
+  transform: translateY(-105%) scale(0.75);
+  opacity: 0.85;
 }
 
 .clear {
@@ -225,33 +228,78 @@ div > input {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color 0.1s;
 }
 
 .clear:hover,
 .clear:focus {
-  color: var(--primary-color);
+  opacity: 0.65;
 }
 
 div > .input:placeholder-shown + .label + .clear {
     display: none;
   }
 
+.error {
+    border-bottom-color: red;
+    border-bottom-width: 2px;
+}
+
+.iconoir-warning-hexagon {
+    font-size: 1.2em;
+}
+
+.helper-text{
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    font-size: 0.75em;
+    font-weight: 100;
+    margin-top: 0.35em;
+}
+
 button[type="submit"] {
-    margin-top: 2rem;
-    float: right;
     border: solid 1px var(--text-color);
     border-radius: 4px;
     padding: 0.75em 1.5em;
     background-color: transparent;
     color: var(--text-color);
-    font-weight: 600;
+    font-weight: 400;
     transition: transform 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-button[type="submit"]:hover{
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    float: right;
+}
+
+.sign-in > p {
+    font-size: 0.6em;
+    margin-top:0.5rem;
+    a {
+        text-decoration: none;
+        color:var(--text-color);
+    }
+}
+
+.sign-in > p > a > .sign-in-btn {
+    border: solid 0.5px var(--text-color);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: 4px;
+    padding: 0.175em 0.75em;
+    font-size: 0.9em;
+    font-weight: 400;
+    transition: transform 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-left: 2px;
+}
+
+.sign-in > p > a > .sign-in-btn:hover, button[type="submit"]:hover {
     cursor: pointer;
     box-shadow: var(--box-shadow-small);
-    transform: scale(1.025);
+    transform: scale(1.05);
 }
 
 footer {
