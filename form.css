@@ -409,8 +409,8 @@ footer>div {
         gap: 0.5rem;
     }
 
-    div > input {
-        width: 250px;
+    div > input, .input {
+        min-width: 264px;
     }
 
     .sign-in {

@@ -28,6 +28,13 @@ function setTheme() {
 document.querySelector('.theme-toggle').addEventListener('click', setTheme);
 
 // Tooltip functionality using TippyJS
+let placement = 'left-end';
+
+if (window.innerWidth < 600) {
+  // Change placement for smaller viewports
+  placement = 'bottom';
+}
+
 tippy('#info', {
   content:
     'This is a form template created to showcase various client-side validation methods using semantic HTML, CSS and vanilla JS. <br><br>Check out my <strong><a href="https://www.github.com/louvalman" class="github-link">Github</a></strong> for more usable templates!',
@@ -37,7 +44,7 @@ tippy('#info', {
   animateFill: false,
   animation: 'shift-away',
   interactive: true,
-  placement: 'left-end',
+  placement: placement,
 });
 
 // Clear input
