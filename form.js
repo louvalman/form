@@ -1,13 +1,21 @@
 const root = document.documentElement;
 
 // Theme functionality
-const themeSwitch = document.querySelector('body > header > span > i');
+const themeSwitch = document.querySelector(
+  'body > header > .header-right > span > i'
+);
+const logo = document.querySelector('.logo');
 
 function setTheme() {
   const newTheme = root.className === 'dark' ? 'light' : 'dark';
   root.className = newTheme;
+
   themeSwitch.classList.toggle('iconoir-light-bulb-on');
   themeSwitch.classList.toggle('iconoir-light-bulb-off');
+
+  const newLogoSrc =
+    newTheme === 'dark' ? 'assets/logo-green.svg' : 'assets/logo-purple.svg';
+  logo.src = newLogoSrc;
 }
 
 document.querySelector('.theme-toggle').addEventListener('click', setTheme);
@@ -55,7 +63,7 @@ function validatePasswords() {
     });
   } else {
     helperTexts.forEach((helperText) => {
-      helperText.innerHTML = ''; // Clear the helper text when passwords match or either field is empty
+      helperText.innerHTML = '';
     });
   }
 }

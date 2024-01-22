@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
+    <title>A form template</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/dcv1nmv.css" />
     <link rel="stylesheet" href="/form.css" />
     <link
@@ -20,7 +21,7 @@
   <body>
     <div class="svg-overlay"></div>
     <header>
-      <div></div>
+      <div><img src="assets/logo-purple.svg" alt="Logo" class="logo" /></div>
       <div>
         <h1></h1>
       </div>
@@ -163,7 +164,6 @@
                         stroke="currentColor" />
                     </svg>
                   </button>
-                  <p class="helper-text"></p>
                 </div>
               </li>
               <li>
@@ -199,7 +199,11 @@
             <button type="submit">Sign up</button>
             <p>
               Already have an account?
-              <a href="#"><button class="sign-in-btn">Sign in</button></a>
+              <a href="#">
+                <button href="#" type="button" class="sign-in-btn">
+                  Sign in
+                </button>
+              </a>
             </p>
           </div>
         </fieldset>
