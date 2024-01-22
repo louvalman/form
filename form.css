@@ -378,6 +378,10 @@ footer>div {
         gap: 0.5rem;
     }
 
+    main {
+        height: max-content;
+    }
+
     .svg-overlay {
         transform: scale(1);
     }
