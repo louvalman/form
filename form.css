@@ -386,4 +386,9 @@ body {
     main {
         height: auto;
     }
+
+    .svg-overlay {
+        position: fixed;
+        transform: scale(1);
+    }
   }
