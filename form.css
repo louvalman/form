@@ -15,13 +15,14 @@
 }
 
 :root.light {
-    --bg-color: linear-gradient(to bottom, #FCFBF4 70%, var(--primary-color) 70%);;
+    --bg-color: linear-gradient(to bottom, #FCFBF4 70%, var(--third-color) 70%);
     --text-color: #43454e;
     --primary-color: #E53AAC;
     --secondary-color: #C642BB;
     --third-color: #8B50C9;
     --border-bottom-style: 1px solid rgba(67, 69, 78, 0.4);
     --svg-bg: url('assets/bg-purple.svg');
+    --tooltip-color: #FCFBF4;
 }
 
 :root.dark {
@@ -32,6 +33,7 @@
     --third-color: #00243D;
     --border-bottom-style: 1px solid rgba(252, 251, 244, 0.5);
     --svg-bg: url('assets/bg-green.svg');
+    --tooltip-color: #0b1517;
 }
 
 body {
@@ -122,12 +124,12 @@ h1 {
     font-size: 0.85em;
     max-width: 250px !important;
     box-shadow: var(--box-shadow-small) !important;
-    background-color: var(--bg-color) !important;
+    background: var(--tooltip-color) !important;
     color: var(--text-color) !important;
 }
 
 .tippy-roundarrow {
-    fill: var(--bg-color);
+    fill: var(--tooltip-color) !important;
 }
 
 main {
