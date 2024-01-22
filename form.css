@@ -15,7 +15,7 @@
 }
 
 :root.light {
-    --bg-color: #FCFBF4;
+    --bg-color: red;
     --text-color: #43454e;
     --primary-color: #E53AAC;
     --secondary-color: #C642BB;
