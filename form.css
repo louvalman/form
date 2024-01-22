@@ -139,6 +139,7 @@ form {
     padding: 3rem;
     border-radius: 8px;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     box-shadow: var(--box-shadow);
 }
 
@@ -375,5 +376,9 @@ footer>div {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .svg-overlay {
+        transform: scale(1);
     }
   }
