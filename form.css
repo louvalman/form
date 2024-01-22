@@ -20,7 +20,7 @@
     --secondary-color: #C642BB;
     --third-color: #8B50C9;
     --border-bottom-style: 1px solid rgba(67, 69, 78, 0.4);
-    --svg-bg: url('/assets/bg-purple.svg');
+    --svg-bg: url('assets/bg-purple.svg');
 }
 
 :root.dark {
@@ -30,7 +30,7 @@
     --secondary-color: #003A46;
     --third-color: #00243D;
     --border-bottom-style: 1px solid rgba(252, 251, 244, 0.5);
-    --svg-bg: url('/assets/bg-green.svg');
+    --svg-bg: url('assets/bg-green.svg');
 }
 
 body {
