@@ -5,6 +5,7 @@ const themeSwitch = document.querySelector(
   'body > header > .header-right > span > i'
 );
 const logo = document.querySelector('.logo');
+const favicon = document.querySelector('link[rel="icon"]');
 
 function setTheme() {
   const newTheme = root.className === 'dark' ? 'light' : 'dark';
@@ -16,6 +17,12 @@ function setTheme() {
   const newLogoSrc =
     newTheme === 'dark' ? 'assets/logo-green.svg' : 'assets/logo-purple.svg';
   logo.src = newLogoSrc;
+
+  const newFaviconHref =
+    newTheme === 'dark'
+      ? 'assets/favicon-green.svg'
+      : 'assets/favicon-purple.svg';
+  favicon.href = newFaviconHref;
 }
 
 document.querySelector('.theme-toggle').addEventListener('click', setTheme);
