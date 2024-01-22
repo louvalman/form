@@ -205,6 +205,8 @@ div > input {
     border-bottom: var(--border-bottom-style);
     transition: border-color 250ms;
     background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
 } 
 
 .input {
@@ -366,11 +368,19 @@ footer>div {
     }
   } */
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
-body {
-    overflow: scroll;
-}
+    body {
+        overflow: scroll;
+    }
+
+    main {
+        height: auto;
+    }
+
+    form {
+        padding: 3rem 1.5rem;
+    }
 
     ul {
         gap: 2rem;
@@ -383,12 +393,13 @@ body {
         gap: 0.5rem;
     }
 
-    main {
-        height: auto;
+    div > input {
+        width: 250px;
     }
 
     .svg-overlay {
         position: fixed;
         transform: scale(1);
+        margin-bottom: -1px; /** to fix offset issue with blur background on mobile) **/
     }
-  }
+}
