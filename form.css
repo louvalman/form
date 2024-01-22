@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    vertical-align: baseline;
     --transform: transform 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --header: 4rem;
     --footer: 60px;
@@ -194,7 +195,7 @@ div > label {
     font-weight: 400;
 }
 
-div > input {
+div > input, .input {
     font-size: 1em;
     min-width: 240px;
     width: 100%;
@@ -208,6 +209,12 @@ div > input {
     -webkit-appearance: none;
     appearance: none;
 } 
+
+::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+}
 
 .input {
     outline: none;
