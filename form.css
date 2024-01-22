@@ -15,7 +15,7 @@
 }
 
 :root.light {
-    --bg-color: red;
+    --bg-color: linear-gradient(to bottom, #FCFBF4 70%, var(--primary-color) 70%);;
     --text-color: #43454e;
     --primary-color: #E53AAC;
     --secondary-color: #C642BB;
@@ -152,9 +152,10 @@ fieldset {
 
 legend {
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 2rem;
     color: var(--text-color);
+    opacity: 0.98;
 }
 
 ul {
@@ -293,7 +294,7 @@ button[type="submit"] {
 .sign-in {
     display: flex;
     flex-direction: column;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     float: right;
 }
 
@@ -412,6 +413,11 @@ footer>div {
 
     .sign-in {
         width: 100%;
+    }
+
+    button[type="submit"] {
+        font-size: 1em;
+        font-weight: 500;
     }
 
     .sign-in > p {
