@@ -120,6 +120,14 @@ function validatePasswords() {
   ) {
     helperTextConfirm.innerHTML =
       '<i class="iconoir-warning-hexagon"></i> The passwords do not match';
+    passwordConfirmation.classList.remove('password-match');
+    passwordConfirmation.classList.add('password-invalid');
+    return false;
+  } else {
+    helperTextConfirm.innerHTML = '';
+    passwordConfirmation.classList.remove('password-invalid');
+    passwordConfirmation.classList.add('password-match');
+    return passwordValue === passwordConfirmationValue;
   }
 }
 
