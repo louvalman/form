@@ -53,32 +53,73 @@ document.addEventListener('click', function (event) {
   if (clearButton) {
     let inputId = clearButton.getAttribute('data-input-id');
     document.getElementById(inputId).value = '';
+
+    // Check if the cleared input is either password or password confirmation
+    if (inputId === 'password' || inputId === 'password_confirmation') {
+      validatePasswords();
+    }
   }
-  validatePasswords();
 });
 
 // Password validation
 const password = document.querySelector('#password');
 const passwordConfirmation = document.querySelector('#password_confirmation');
 const helperTexts = document.querySelectorAll('.helper-text');
+const helperTextConfirm = document.querySelector('.helper-text-confirm');
 
 function validatePasswords() {
   const passwordValue = password.value.trim();
   const passwordConfirmationValue = passwordConfirmation.value.trim();
+  const hasUppercase = /[A-Z]/.test(passwordValue);
+  const hasLowercase = /[a-z]/.test(passwordValue);
+  const hasDigit = /\d/.test(passwordValue);
+  const hasMinLength = passwordValue.length >= 8;
 
+  // Reset all helper texts
+  helperTexts.forEach((helperText) => {
+    helperText.innerHTML = '';
+  });
+
+  helperTextConfirm.innerHTML = '';
+
+  // Accumulate error messages for failed conditions
+  const errorMessages = [];
+
+  if (!hasLowercase) {
+    errorMessages.push('The password does not contain a lowercase letter');
+  }
+
+  if (!hasUppercase) {
+    errorMessages.push('The password does not contain an uppercase letter');
+  }
+
+  if (!hasDigit) {
+    errorMessages.push('The password does not contain a digit');
+  }
+
+  if (!hasMinLength) {
+    errorMessages.push('The password should be at least 8 characters long');
+  }
+
+  // Update helper texts with accumulated error messages
+  if (errorMessages.length > 0) {
+    const errorMessageHtml = errorMessages.map(
+      (message) =>
+        `<div><i class="iconoir-warning-hexagon"></i> ${message}</div>`
+    );
+    helperTexts.forEach((helperText) => {
+      helperText.innerHTML = errorMessageHtml.join('');
+    });
+  }
+
+  // Check password match
   if (
     passwordValue !== '' &&
     passwordConfirmationValue !== '' &&
     passwordConfirmationValue !== passwordValue
   ) {
-    helperTexts.forEach((helperText) => {
-      helperText.innerHTML =
-        '<i class="iconoir-warning-hexagon"></i> The passwords do not match';
-    });
-  } else {
-    helperTexts.forEach((helperText) => {
-      helperText.innerHTML = '';
-    });
+    helperTextConfirm.innerHTML =
+      '<i class="iconoir-warning-hexagon"></i> The passwords do not match';
   }
 }
 

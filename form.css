@@ -21,6 +21,7 @@
     --secondary-color: #C642BB;
     --third-color: #8B50C9;
     --border-bottom-style: 1px solid rgba(67, 69, 78, 0.4);
+    --border-bottom-style-focus: 1px solid rgba(67, 69, 78, 0.8);
     --svg-bg: url('assets/bg-purple.svg');
     --tooltip-color: #FCFBF4;
 }
@@ -32,6 +33,7 @@
     --secondary-color: #003A46;
     --third-color: #00243D;
     --border-bottom-style: 1px solid rgba(252, 251, 244, 0.5);
+    --border-bottom-style-focus: 1px solid rgba(252, 251, 244, 0.8);
     --svg-bg: url('assets/bg-green.svg');
     --tooltip-color: #0b1517;
 }
@@ -177,7 +179,6 @@ ul li {
     margin-top: 0.3em;
     margin-inline: auto;
     max-width: 40rem;
-    height: 40px;
   }
 
 ul > div {
@@ -209,13 +210,16 @@ div > input, .input {
     border-bottom: var(--border-bottom-style);
     border-radius: 0px;
     outline: none !important;
-    border-bottom-color:var(--text-color);
     transition: border-color 250ms;
     background-color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 } 
+
+.input:focus {
+    border-color: var(--border-bottom-style-focus);
+}
 
 ::-webkit-contacts-auto-fill-button {
     visibility: hidden;
@@ -238,9 +242,8 @@ div > input, .input {
     appearance: none;
     -webkit-appearance: none;
     position: absolute;
-    top: 50%;
+    top: 14px;
     right: 2px;
-    transform: translateY(-50%);
     background: none;
     border: none;
     border-radius: 50%;
@@ -275,8 +278,16 @@ div > .input:placeholder-shown + .label + .clear {
 
 .helper-text{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 0.25em;
+    max-width: 25ch;
+}
+
+.helper-text > div, .helper-text-confirm {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.7;
     font-size: 0.75em;
     font-weight: 400;
     margin-top: 0.35em;
@@ -410,7 +421,7 @@ footer>div {
     ul > div {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
     }
 
     div > input, .input {

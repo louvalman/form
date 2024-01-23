@@ -48,7 +48,8 @@
                     name="first_name"
                     id="first_name"
                     class="input"
-                    placeholder="First name" />
+                    placeholder="First name"
+                    required />
                   <label for="first_name" class="label">First name</label>
                   <button
                     class="clear"
@@ -102,7 +103,8 @@
                     name="email"
                     id="email"
                     class="input"
-                    placeholder="Email" />
+                    placeholder="Email"
+                    required />
                   <label for="email" class="label">Email</label>
                   <button
                     class="clear"
@@ -152,7 +154,9 @@
                     name="password"
                     id="password"
                     class="input"
-                    placeholder="Password" />
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                    placeholder="Password"
+                    required />
                   <label for="password" class="label">Password</label>
                   <button
                     class="clear"
@@ -167,6 +171,7 @@
                         stroke="currentColor" />
                     </svg>
                   </button>
+                  <p class="helper-text"></p>
                 </div>
               </li>
               <li>
@@ -193,7 +198,7 @@
                         stroke="currentColor" />
                     </svg>
                   </button>
-                  <p class="helper-text"></p>
+                  <p class="helper-text-confirm"></p>
                 </div>
               </li>
             </div>
