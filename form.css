@@ -11,12 +11,12 @@
     --box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     --box-shadow-small: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --white-color: #FCFBF4;
-    --black-color: #43454e;
+    --black-color: #36383e;
 }
 
 :root.light {
     --bg-color: linear-gradient(to bottom, #FCFBF4 70%, var(--third-color) 70%);
-    --text-color: #43454e;
+    --text-color: #36383e;
     --primary-color: #E53AAC;
     --secondary-color: #C642BB;
     --third-color: #8B50C9;
@@ -396,6 +396,10 @@ footer>div {
     form {
         padding: 3rem 2.5rem;
         margin: 20px 0;
+    }
+
+    legend {
+        text-align: center;
     }
 
     ul {
