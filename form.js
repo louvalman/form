@@ -20,8 +20,8 @@ function setTheme() {
 
   const newFaviconHref =
     newTheme === 'dark'
-      ? 'assets/favicon-green.svg'
-      : 'assets/favicon-purple.svg';
+      ? 'assets/favicon-green.png'
+      : 'assets/favicon-purple.png';
   favicon.href = newFaviconHref;
 }
 
