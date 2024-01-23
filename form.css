@@ -217,7 +217,7 @@ div > input, .input {
 } 
 
 .input:focus {
-    border-color: var(--border-bottom-style-focus);
+    border-color: var(--border-bottom-style-focus) !important;
 }
 
 ::-webkit-contacts-auto-fill-button {
@@ -267,16 +267,16 @@ div > .input:placeholder-shown + .label + .clear {
   }
 
 .input:valid, input.password-match {
-    border-bottom-color: var(--third-color);
+    border-bottom-color: var(--third-color) !important;
 }
 
 input.password-invalid {
-    border-bottom-color: initial !important;
+    border-bottom-color: var(--border-bottom-style) !important;
 }
 
 /* Styles for empty input (placeholder shown) */
 .input:placeholder-shown {
-    border-color: initial;
+    border-bottom: var(--border-bottom-style);
   }
 
 .iconoir-warning-hexagon {
@@ -417,7 +417,9 @@ footer>div {
     }
 
     legend {
-        text-align: center;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 400;
     }
 
     ul {
