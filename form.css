@@ -154,8 +154,8 @@ fieldset {
 }
 
 legend {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin-bottom: 2rem;
     color: var(--text-color);
     opacity: 0.9;
@@ -419,7 +419,6 @@ footer>div {
     legend {
         text-align: left;
         font-size: 1rem;
-        font-weight: 400;
     }
 
     ul {
