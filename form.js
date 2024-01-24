@@ -122,12 +122,21 @@ function validatePasswords() {
       '<i class="iconoir-warning-hexagon"></i> The passwords do not match';
     passwordConfirmation.classList.remove('password-match');
     passwordConfirmation.classList.add('password-invalid');
+    passwordConfirmation.setCustomValidity('Passwords do not match');
     return false;
-  } else {
+  } else if (
+    passwordConfirmationValue === passwordValue &&
+    passwordValue !== '' &&
+    passwordConfirmationValue !== ''
+  ) {
     helperTextConfirm.innerHTML = '';
     passwordConfirmation.classList.remove('password-invalid');
     passwordConfirmation.classList.add('password-match');
-    return passwordValue === passwordConfirmationValue;
+    passwordConfirmation.setCustomValidity('');
+    return true;
+  } else {
+    passwordConfirmation.setCustomValidity('Passwords do not match');
+    passwordConfirmation.classList.remove('password-match');
   }
 }
 
