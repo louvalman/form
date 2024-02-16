@@ -51,7 +51,7 @@ body {
 
 .svg-overlay {
     position: absolute;
-    bottom:0;  
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -99,7 +99,7 @@ h1 {
 
 .header-right {
     gap: 8px;
-    margin-right:4px;
+    margin-right: 4px;
 }
 
 .header-right * {
@@ -155,7 +155,7 @@ fieldset {
 
 legend {
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 2rem;
     color: var(--text-color);
     opacity: 0.9;
@@ -178,14 +178,14 @@ ul li {
     margin-top: 0.3em;
     margin-inline: auto;
     max-width: 40rem;
-  }
+}
 
-ul > div {
+ul>div {
     display: flex;
     gap: 2rem;
 }
 
-div > label {
+div>label {
     position: absolute;
     top: 8px;
     left: 0;
@@ -198,7 +198,8 @@ div > label {
     font-weight: 400;
 }
 
-div > input, .input {
+div>input,
+.input {
     font-size: 1em;
     min-width: 240px;
     width: 100%;
@@ -214,7 +215,7 @@ div > input, .input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-} 
+}
 
 .input:focus {
     border-color: var(--border-bottom-style-focus) !important;
@@ -225,15 +226,15 @@ div > input, .input {
     pointer-events: none;
     position: absolute;
 }
-  
-  .input::placeholder {
-    color: transparent;
-  }
 
-.input:focus + .label,
-.input:not(:placeholder-shown) + .label {
-  transform: translateY(-105%) scale(0.75);
-  opacity: 0.85;
+.input::placeholder {
+    color: transparent;
+}
+
+.input:focus+.label,
+.input:not(:placeholder-shown)+.label {
+    transform: translateY(-105%) scale(0.75);
+    opacity: 0.85;
 }
 
 .clear {
@@ -259,14 +260,15 @@ div > input, .input {
 
 .clear:hover,
 .clear:focus {
-  opacity: 0.65;
+    opacity: 0.65;
 }
 
-div > .input:placeholder-shown + .label + .clear {
+div>.input:placeholder-shown+.label+.clear {
     display: none;
-  }
+}
 
-.input:valid, input.password-match {
+.input:valid,
+input.password-match {
     border-bottom-color: var(--third-color) !important;
 }
 
@@ -277,20 +279,21 @@ input.password-invalid {
 /* Styles for empty input (placeholder shown) */
 .input:placeholder-shown {
     border-bottom: var(--border-bottom-style);
-  }
+}
 
 .iconoir-warning-hexagon {
     font-size: 1.2em;
 }
 
-.helper-text{
+.helper-text {
     display: flex;
     flex-direction: column;
     gap: 0.25em;
     max-width: 25ch;
 }
 
-.helper-text > div, .helper-text-confirm {
+.helper-text>div,
+.helper-text-confirm {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -318,16 +321,17 @@ button[type="submit"] {
     float: right;
 }
 
-.sign-in > p {
+.sign-in>p {
     font-size: 0.6em;
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
+
     a {
         text-decoration: none;
-        color:var(--text-color);
+        color: var(--text-color);
     }
 }
 
-.sign-in > p > a > .sign-in-btn {
+.sign-in>p>a>.sign-in-btn {
     border: solid 0.5px var(--text-color);
     background-color: transparent;
     color: var(--text-color);
@@ -339,7 +343,8 @@ button[type="submit"] {
     margin-left: 2px;
 }
 
-.sign-in > p > a > .sign-in-btn:hover, button[type="submit"]:hover {
+.sign-in>p>a>.sign-in-btn:hover,
+button[type="submit"]:hover {
     cursor: pointer;
     box-shadow: var(--box-shadow-small);
     transform: scale(1.05);
@@ -426,13 +431,14 @@ footer>div {
         height: max-content;
     }
 
-    ul > div {
+    ul>div {
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
 
-    div > input, .input {
+    div>input,
+    .input {
         min-width: 264px;
     }
 
@@ -446,7 +452,7 @@ footer>div {
         letter-spacing: 0.5px;
     }
 
-    .sign-in > p {
+    .sign-in>p {
         align-self: center;
     }
 }
